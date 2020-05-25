@@ -1,0 +1,914 @@
+{
+  "intents": [
+    {
+      "intent": "Bye",
+      "examples": [
+        {
+          "text": "Bubye"
+        },
+        {
+          "text": "Bye"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Fever",
+      "examples": [
+        {
+          "text": "have fever"
+        },
+        {
+          "text": "fever"
+        },
+        {
+          "text": "suffering from fever"
+        },
+        {
+          "text": "high fever"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Thank_you",
+      "examples": [
+        {
+          "text": "thank you so much"
+        },
+        {
+          "text": "thankyou"
+        },
+        {
+          "text": "thanks"
+        },
+        {
+          "text": "thanqq"
+        },
+        {
+          "text": "thank you"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Suggestion_Appointment",
+      "examples": [
+        {
+          "text": "Doctor Appointment"
+        },
+        {
+          "text": "Appointment"
+        },
+        {
+          "text": "need a doctor appointment"
+        },
+        {
+          "text": "Need doc appointment"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Headache",
+      "examples": [
+        {
+          "text": "head pain"
+        },
+        {
+          "text": "Suffering from headache"
+        },
+        {
+          "text": "Headache"
+        },
+        {
+          "text": "severe headache"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Suggestion_Medicine",
+      "examples": [
+        {
+          "text": "Medical Suggestion"
+        },
+        {
+          "text": "I want medical suggestion"
+        },
+        {
+          "text": "suggest through medicine"
+        },
+        {
+          "text": "need medical suggestion"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "cough",
+      "examples": [
+        {
+          "text": "severe cough"
+        },
+        {
+          "text": "cough"
+        },
+        {
+          "text": "having cough"
+        },
+        {
+          "text": "suffering from cough"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "vomitings",
+      "examples": [
+        {
+          "text": "vomiting"
+        },
+        {
+          "text": "having vomitings"
+        },
+        {
+          "text": "frequent vomitings"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "stomach_pain",
+      "examples": [
+        {
+          "text": "pain in stomach"
+        },
+        {
+          "text": "suffering from stomach pain"
+        },
+        {
+          "text": "stomach ache"
+        },
+        {
+          "text": "stomach pain"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "cold",
+      "examples": [
+        {
+          "text": "having cold"
+        },
+        {
+          "text": "had cold"
+        },
+        {
+          "text": "cold"
+        },
+        {
+          "text": "severe cold"
+        },
+        {
+          "text": "runny nose"
+        },
+        {
+          "text": "suffering from cold"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "Fever",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Normal",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Fever with bodypains",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Fever with cold/cough",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "cough",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Normal",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Dry Cough",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Stomach_pain",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Normal",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Lower Abdomen",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Suggestion",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Doctor Appointment",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "medical Suggestion",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Headache",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Normal",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Tension",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Migraine",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "stomachpain",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I would like to suggest you to take AZTREONAM tablet"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1590417820080",
+      "conditions": "@Stomach_pain:(Lower Abdomen)",
+      "dialog_node": "node_6_1590418509605",
+      "previous_sibling": "node_8_1590418392837"
+    },
+    {
+      "type": "standard",
+      "title": "stomach pain",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I would like to suggest you to take SPASMO tablet"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1590417820080",
+      "conditions": "@Stomach_pain:Normal",
+      "dialog_node": "node_8_1590418392837"
+    },
+    {
+      "type": "standard",
+      "title": "fever",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I would like to suggest you to take DOLO-650 tablet"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1590417697345",
+      "conditions": "@Fever:(Fever with bodypains)",
+      "dialog_node": "node_1_1590418217479",
+      "previous_sibling": "node_5_1590418150182"
+    },
+    {
+      "type": "standard",
+      "title": "fever",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I would like to suggest you to take PARACETAMOL,TUS-Q and COLD-ACT tablet "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1590417697345",
+      "conditions": "@Fever:(Fever with cold/cough)",
+      "dialog_node": "node_2_1590418257073",
+      "previous_sibling": "node_1_1590418217479"
+    },
+    {
+      "type": "standard",
+      "title": "fever",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I would like to suggest you to take PARACETAMOL tablet"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1590417697345",
+      "conditions": "@Fever:Normal",
+      "dialog_node": "node_5_1590418150182"
+    },
+    {
+      "type": "standard",
+      "title": "cough",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I would like to suggest ASCORIL-D syrup "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1590418002076",
+      "conditions": "@cough:(Dry Cough)",
+      "dialog_node": "node_9_1590418788114",
+      "previous_sibling": "node_1_1590418677569"
+    },
+    {
+      "type": "standard",
+      "title": "cough",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I would like to suggest you BENADRYL syrup"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1590418002076",
+      "conditions": "@cough:Normal",
+      "dialog_node": "node_1_1590418677569"
+    },
+    {
+      "type": "standard",
+      "title": "headache",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I would like to suggest you to take NAXDOM-250 tablet"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1590417295607",
+      "conditions": "@Headache:Migraine",
+      "dialog_node": "node_10_1590417125406",
+      "previous_sibling": "node_7_1590416914368"
+    },
+    {
+      "type": "standard",
+      "title": "headache",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I would like to suggest you to take SARIDON tablet"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1590417295607",
+      "conditions": "@Headache:Tension",
+      "dialog_node": "node_10_1590417035746",
+      "previous_sibling": "response_10_1590419435789"
+    },
+    {
+      "type": "standard",
+      "title": "headache",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Please take rest, you will feel better"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1590417295607",
+      "conditions": "@Headache:Normal",
+      "dialog_node": "node_7_1590416914368",
+      "previous_sibling": "node_10_1590417035746"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "title": "What kind of headache",
+            "options": [
+              {
+                "label": "Normal",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              },
+              {
+                "label": "Tension",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              },
+              {
+                "label": "Migraine ",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_5_1590417295607",
+      "disabled": true,
+      "dialog_node": "response_10_1590419435789"
+    },
+    {
+      "type": "standard",
+      "title": "bye",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Bye"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Bye",
+      "dialog_node": "node_3_1590426140638",
+      "previous_sibling": "node_9_1590416833214"
+    },
+    {
+      "type": "standard",
+      "title": "Cough",
+      "output": {
+        "generic": [
+          {
+            "title": "What kind of cough",
+            "options": [
+              {
+                "label": "Normal",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              },
+              {
+                "label": "Dry cough",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "conditions": "#cough",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_5_1590418002076",
+      "previous_sibling": "node_1_1590418064078"
+    },
+    {
+      "type": "standard",
+      "title": "vomitings",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I would like to suggest you to take AVOMINE tablet"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#vomitings",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_1_1590418064078",
+      "previous_sibling": "node_9_1590416658655"
+    },
+    {
+      "type": "standard",
+      "title": "Fever",
+      "output": {
+        "generic": [
+          {
+            "title": "What kind of fever",
+            "options": [
+              {
+                "label": "Normal",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              },
+              {
+                "label": "Fever with bodypains",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              },
+              {
+                "label": "Fever with cold/cough",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "conditions": "#Fever",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_8_1590417697345",
+      "previous_sibling": "node_2_1590417820080"
+    },
+    {
+      "type": "standard",
+      "title": "Headache",
+      "output": {
+        "generic": [
+          {
+            "title": "What kind of headache",
+            "options": [
+              {
+                "label": "Normal",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              },
+              {
+                "label": "Tension",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              },
+              {
+                "label": "Migraine ",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "metadata": {
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "conditions": "#Headache",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_5_1590417295607",
+      "previous_sibling": "node_8_1590417697345"
+    },
+    {
+      "type": "standard",
+      "title": "cold",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I would like to suggest you to take CETIRIZINE tablet"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#cold",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_7_1590417891984",
+      "previous_sibling": "node_5_1590418002076"
+    },
+    {
+      "type": "standard",
+      "title": "thankyou",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "ThankYou! Stay safe and stay healthy."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Thank_you",
+      "dialog_node": "node_4_1590426176784",
+      "previous_sibling": "node_3_1590426140638"
+    },
+    {
+      "type": "standard",
+      "title": "stomack_pain",
+      "output": {
+        "generic": [
+          {
+            "title": "What kind of stomach pain",
+            "options": [
+              {
+                "label": "Normal",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              },
+              {
+                "label": "Lower Abdomen",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "conditions": "#stomach_pain",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_2_1590417820080",
+      "previous_sibling": "node_7_1590417891984"
+    },
+    {
+      "type": "standard",
+      "title": "Default",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_4_1590426176784",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "Suggestion",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Can you tell us your problem we will take you appointment"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Suggestion_Appointment",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_9_1590416833214",
+      "previous_sibling": "node_5_1590417295607"
+    },
+    {
+      "type": "standard",
+      "title": "Suggestion",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Can you please tell us your problem"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Suggestion_Medicine",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_9_1590416658655",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "I'm glad you reached out"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "How can we help you today",
+            "options": [
+              {
+                "label": "Medical Suggestion",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              },
+              {
+                "label": "Doctor Appointment",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "Medical Health",
+  "language": "en",
+  "description": ""
+}
