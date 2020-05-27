@@ -1,0 +1,1039 @@
+{
+  "intents": [
+    {
+      "intent": "Your_medical_proofs",
+      "examples": [
+        {
+          "text": "Will this proof work even in red zone areas where there are few people dealing with COVID-19?"
+        },
+        {
+          "text": "Do I have to upload my medical certificates in the app?"
+        },
+        {
+          "text": "Can we show this as a proof to the police standing on roads in this period of pandemic?"
+        }
+      ],
+      "description": "It acts as a virtual proof of the users disease and the medical treatment the user need to undergo whenever needed"
+    },
+    {
+      "intent": "Blood_Bank_Status",
+      "examples": [
+        {
+          "text": "Blood Bank Status"
+        },
+        {
+          "text": "Can I know the amount of blood present in my nearby blood bank?"
+        },
+        {
+          "text": "Can I go to blood bank to get blood transfusion ?"
+        },
+        {
+          "text": "What is the current status of the blood bank near me?"
+        },
+        {
+          "text": "When can I go for blood transfusion?"
+        },
+        {
+          "text": "What is the amount of my group of blood present in the blood bank currently?"
+        }
+      ],
+      "description": "Helps the user to know the amount of particular group of blood present in the nearby blood banks any time"
+    },
+    {
+      "intent": "Medicines_home_delivery",
+      "examples": [
+        {
+          "text": "I need medicines to treat infectious diseases"
+        },
+        {
+          "text": "How much time will it take for the medicines to get delivered ?"
+        },
+        {
+          "text": "I need medicines"
+        },
+        {
+          "text": "I need medicines used for treating cancer"
+        },
+        {
+          "text": "I am suffering from a disease how I can get my medicines ?"
+        }
+      ],
+      "description": "Helping the user get their medicines delivered to their home"
+    },
+    {
+      "intent": "Medical-appointment",
+      "examples": [
+        {
+          "text": "I am suffering with cancer. Can I get an appointment from a cardiologist?"
+        },
+        {
+          "text": "I am a pregnant women can I get a gynecologists appointment ?"
+        },
+        {
+          "text": "Can u help me in medical appointment"
+        },
+        {
+          "text": "medical appointment"
+        },
+        {
+          "text": "appointment with doctor"
+        },
+        {
+          "text": "I need an appointment"
+        }
+      ],
+      "description": "Helping the user get an appointment with there regular doctor"
+    },
+    {
+      "intent": "Transport",
+      "examples": [
+        {
+          "text": "Is there any vehicle/ambulance present nearby my area which could arrive as soon as possible?"
+        },
+        {
+          "text": "Emergency, book an ambulance please"
+        },
+        {
+          "text": "I live in a rural area. What is the maximum time the ambulance will take to reach my area?"
+        },
+        {
+          "text": "What is the current location of the ambulance?"
+        },
+        {
+          "text": "I am in emergency, please send the ambulance to my address"
+        },
+        {
+          "text": "By what time will the ambulance reach?"
+        }
+      ],
+      "description": "helps the user to reach hospital as quickly as possible at the time of emergencies "
+    },
+    {
+      "intent": "Bye",
+      "examples": [
+        {
+          "text": "Bubye"
+        },
+        {
+          "text": "Bye"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Thank_you",
+      "examples": [
+        {
+          "text": "thank you so much"
+        },
+        {
+          "text": "thankyou"
+        },
+        {
+          "text": "thank you for the suggestions"
+        },
+        {
+          "text": "thank you"
+        },
+        {
+          "text": "thanks"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "diet_plan",
+      "examples": [
+        {
+          "text": "can i know the diet plan"
+        },
+        {
+          "text": "Medical Appontments"
+        },
+        {
+          "text": "suggest me a diet plan"
+        },
+        {
+          "text": "i need a diet plan"
+        },
+        {
+          "text": "diet plan"
+        }
+      ],
+      "description": "helping the patient with their regular diet plan"
+    }
+  ],
+  "entities": [
+    {
+      "entity": "Medicines_home_delivery",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Delivery charges",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Medicines required",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Billing",
+          "synonyms": [
+            "payment"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Shipping time",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Medical equipment's required",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Address",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Emergency_Transport",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Address",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Medical_Appointment",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "nutritionist",
+          "synonyms": [
+            "A doctor who helps people achieve their health goals"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Onocologist",
+          "synonyms": [
+            "A doctor who treats diseases like cancer"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Pediatrician",
+          "synonyms": [
+            "A doctor who deals with children related diseases"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "General Medicine",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Hematologist",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Dermatologist",
+          "synonyms": [
+            "A doctor who treats patients dealing with skin diseases",
+            "allergist"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Cardiologist",
+          "synonyms": [
+            "A doctor who treats patients dealing with heart diseases"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Gynecologist",
+          "synonyms": [
+            "A doctor who deals with female reproductive system"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Haematologist",
+          "synonyms": [
+            "A doctor who treats patients dealing with blood diseases"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Infectious disease Doctor",
+          "synonyms": [
+            "A doctor who treats infections diseases like dengue , AIDS , etc"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Nephrologist",
+          "synonyms": [
+            "A doctor who treats patients dealing with kidney diseases"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Neurologist",
+          "synonyms": [
+            "A doctor who treats disorders that effect the nervous system"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Diet_Plan",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Diabetic patients",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Kidney stone patients",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "HIV Aids patients",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Thalassemia major",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "thalassemia minor patients",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Cancer patients",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Sugar Patients",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "kids",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Pregnant women",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Blood_Bank_Status",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "A-",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "B+",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "B-",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "AB+",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "O+",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "AB-",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "O-",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "A+",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Name",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello $Name."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "How can I help you?",
+            "options": [
+              {
+                "label": "Medical Appointment",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              },
+              {
+                "label": "Diet Plan",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              },
+              {
+                "label": "Blood bank information",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              },
+              {
+                "label": "Emergency Transport",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "Welcome",
+      "context": {
+        "Name": "<?input.text.substring(0,1).toUpperCase()+input.text.substring(1)?>"
+      },
+      "conditions": "true",
+      "dialog_node": "node_1_1590542345222"
+    },
+    {
+      "type": "standard",
+      "title": "Pregnant",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I would like to suggest you"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "PRE BREAKFAST SNACK\n\nA glass of plain cow’s milk\nAlmond milk\nMilkshake\nApple juice\nTomato juice\nDry fruits\nBREAKFAST\n\nBowl of fruits\nWheat rava upma with lots of vegetables\nPoha with lots of vegetables\nOats porridge\nWhole wheat toast with butter and omelet\nVegetable omelet\nParanthas with fillings of spinach, dal, potatoes, carrots, beans, cottage cheese, cheese with curd\nMixed bean cutlet or patties\nSome fruits to go along with the breakfast such as apricots, dates, sweet fig, banana, oranges\nCheese toast or cheese and vegetable sandwich\nVegetable khandvi\nRice sevai with lots of vegetables\nMID MORNING SNACK\n\nTomato soup\nSpinach soup\nCreamy spinach soup\nCarrot and beet soup\nChicken soup\nLUNCH\n\nRoti with choice of dal, vegetable and a bowl of curd\nParantha with dal and a bowl of curd\nCarrot and peas parantha with a bowl of curd and some butter\nJeera or pea rice with raita\nRice, dal and vegetable with vegetable salad\nLemon rice with peas and some vegetable salad\nVegetable khichdi\nChicken salad with lots of fresh vegetables or vegetable soup\nChicken curry with rice\nGrilled chicken with a bowl of curd\nRice, dal, mint raita and a fruit\nKofta curry with rice\nCottage cheese parantha with butter and vegetable salad\nCurd rice\nParantha with sprouted beans salad\nEVENING SNACK\n\nCheese and corn sandwich\nVegetable idli\nSpinach and tomato idli\nSevaiya with lots of vegetables\nCarrot or lauki halwa\nFruit smoothie with fresh fruits such as banana or strawberry\nRoasted peanut mixture with vegetables\nCauliflower and peas samosa\nBread cutlet\nChicken cutlet\nChicken sandwich\nChicken soup\nA bowl of dried dates or dry fruits\nA cup of green tea\nMilk porridge with oats, sevaior daliya\nVegetable daliya\nMixed vegetable uttapam\nDINNER\n\nRice with dal, spinach vegetable, and some green salad\nRoti with a bowl of dal, a vegetable of choice and a glass of buttermilk\nMixed dal khichdi with a vegetable curry and a bowl of curd\nVegetable pulaoor chicken rice with a bowl of yogurt\nPlain parantha with a glass of buttermilk"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_10_1590519119067",
+      "conditions": "@Diet_Plan:(Pregnant women)",
+      "dialog_node": "node_2_1590544924090",
+      "previous_sibling": "node_5_1590519509590"
+    },
+    {
+      "type": "standard",
+      "title": "kidney",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I would like to suggest you"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "Drink plenty of water,Get the calcium you need,Reduce sodium,Limit animal protein and Restrict foods that contain high levels of oxalates."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_10_1590519119067",
+      "conditions": "@Diet_Plan:(Kidney stone patients)",
+      "dialog_node": "node_6_1590545503542",
+      "previous_sibling": "node_4_1590545224844"
+    },
+    {
+      "type": "standard",
+      "title": "kids",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Include these in your child diet "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "Fruits,Vegetables,Grains,Fats,oils,milk,dairy products,meat and beans"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_10_1590519119067",
+      "conditions": "@Diet_Plan:kids",
+      "dialog_node": "node_4_1590545224844",
+      "previous_sibling": "node_2_1590544924090"
+    },
+    {
+      "type": "standard",
+      "title": "sugar",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "To control the sugar level I would like to suggest you to take "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "1. Raw, Cooked, or Roasted Vegetables"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "2. Greens,eggs, and lean meats"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "3. Flavorful, Low-calorie Drinks"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "4. Melon or Berries,Whole-grain, Higher-fiber Foods"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_10_1590519119067",
+      "conditions": "@Diet_Plan:(Diabetic patients)",
+      "dialog_node": "node_5_1590519509590"
+    },
+    {
+      "type": "standard",
+      "title": "ambulance",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Do not worry the Ambulance will arrive soon."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1590577823278",
+      "context": {
+        "Location": "<?input.text.substring(0,1).toUpperCase()+input.text.substring(1)?>"
+      },
+      "conditions": "true",
+      "dialog_node": "node_7_1590542870711"
+    },
+    {
+      "type": "standard",
+      "title": "General phys",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "For the appointment please <a  target=\"_blank\" href=\"https://www.yashodahospitals.com/doctor-department/general-medicine/\">Click Here</a>.<br/><br/> "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1590516332580",
+      "conditions": "@Medical_Appointment:(General Medicine)",
+      "dialog_node": "node_2_1590518385548",
+      "previous_sibling": "node_7_1590516842475"
+    },
+    {
+      "type": "standard",
+      "title": "neuro",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "For the appointment please <a  target=\"_blank\" href=\"https://www.yashodahospitals.com/doctor-department/neurology/\">Click Here</a>.<br/><br/> "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1590516332580",
+      "conditions": "@Medical_Appointment:Neurologist",
+      "dialog_node": "node_9_1590544108488",
+      "previous_sibling": "node_9_1590582238908"
+    },
+    {
+      "type": "standard",
+      "title": "derma",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "For the appointment please <a  target=\"_blank\" href=\"https://www.yashodahospitals.com/doctor-department/dermatology/\">Click Here</a>.<br/><br/> "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1590516332580",
+      "conditions": "@Medical_Appointment:Dermatologist",
+      "dialog_node": "node_10_1590543930527",
+      "previous_sibling": "node_3_1590543283090"
+    },
+    {
+      "type": "standard",
+      "title": "Cardiologist",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "For the appointment please <a target=\"_blank\"herf=\"https://www.mfine.co/cardiologists/amp/\">Click Here</a>.<br/><br/>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1590516332580",
+      "conditions": "@Medical_Appointment:Cardiologist",
+      "dialog_node": "node_9_1590582238908",
+      "previous_sibling": "node_10_1590543930527"
+    },
+    {
+      "type": "standard",
+      "title": "pedia",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "For the appointment please <a  target=\"_blank\" href=\"https://www.rainbowhospitals.in/child-care/specialities\">Click Here</a>.<br/><br/> "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1590516332580",
+      "conditions": "@Medical_Appointment:Pediatrician",
+      "dialog_node": "node_3_1590543283090",
+      "previous_sibling": "node_2_1590518385548"
+    },
+    {
+      "type": "standard",
+      "title": "gynic",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "For the appointment please <a  target=\"_blank\" href=\"https://www.yashodahospitals.com/doctor-department/gynaecology/\">Click Here</a>.<br/><br/> "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1590516332580",
+      "context": {},
+      "conditions": "@Medical_Appointment:Gynecologist",
+      "dialog_node": "node_7_1590516842475"
+    },
+    {
+      "type": "standard",
+      "title": "Blood Bank Status",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "To Know the availability please <a  target=\"_blank\" href=\"http://www.hyderabadblooddonors.org/hyderabadblooddonors/Search.aspx\">Click Here</a>.<br/><br/>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Blood_Bank_Status",
+      "dialog_node": "node_1_1590580184233",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "bye",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Bye."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Bye",
+      "dialog_node": "node_6_1590546043694",
+      "previous_sibling": "node_3_1590545990412"
+    },
+    {
+      "type": "standard",
+      "title": "thankyou",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Thank You! Stay home-Stay safe."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Thank_you",
+      "dialog_node": "node_3_1590545990412",
+      "previous_sibling": "node_10_1590519119067"
+    },
+    {
+      "type": "standard",
+      "title": "Medical Appointment",
+      "output": {
+        "generic": [
+          {
+            "title": "Appointment for",
+            "options": [
+              {
+                "label": "Gynecologist ",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              },
+              {
+                "label": "General Medicine",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              },
+              {
+                "label": "Pediatrician ",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              },
+              {
+                "label": "Dermatologist ",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              },
+              {
+                "label": "Cardiologist",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              },
+              {
+                "label": "Neurologist ",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "conditions": "#Medical-appointment",
+      "dialog_node": "node_3_1590516332580",
+      "previous_sibling": "node_3_1590577823278"
+    },
+    {
+      "type": "standard",
+      "title": "diet_plan",
+      "output": {
+        "generic": [
+          {
+            "title": "Diet Plan for",
+            "options": [
+              {
+                "label": "Kids",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              },
+              {
+                "label": "Pregnant Women",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              },
+              {
+                "label": "Diabetic Patients",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              },
+              {
+                "label": "Kidney Stone Patients",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "conditions": "#diet_plan",
+      "dialog_node": "node_10_1590519119067",
+      "previous_sibling": "node_3_1590516332580"
+    },
+    {
+      "type": "standard",
+      "title": "Emergency Transport",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "What is your current location?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Transport",
+      "dialog_node": "node_3_1590577823278",
+      "previous_sibling": "node_1_1590580184233"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_6_1590546043694",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello. I'm a TECH WORRIER to help you in these days of pandamic"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "We can call u by?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "Aid for medical emergency",
+  "language": "en",
+  "description": ""
+}
