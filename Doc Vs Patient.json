@@ -1,0 +1,514 @@
+{
+  "intents": [
+    {
+      "intent": "fever",
+      "examples": [
+        {
+          "text": "fever"
+        }
+      ]
+    },
+    {
+      "intent": "headache",
+      "examples": [
+        {
+          "text": "I have headache"
+        },
+        {
+          "text": "suffering from headache"
+        },
+        {
+          "text": "severe headache"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Medical",
+      "examples": [
+        {
+          "text": "medical suggestion"
+        },
+        {
+          "text": "i want medical suggestion"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "bye",
+      "examples": [
+        {
+          "text": "bye"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "thank_you",
+      "examples": [
+        {
+          "text": "thank you"
+        }
+      ],
+      "description": "thank you"
+    },
+    {
+      "intent": "diet_plan",
+      "examples": [
+        {
+          "text": "I need a diet plan"
+        },
+        {
+          "text": "diet plan"
+        },
+        {
+          "text": "Diet plan please"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Cough",
+      "examples": [
+        {
+          "text": "i have cough"
+        },
+        {
+          "text": "cough"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "diet_plan",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "kids",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "diabetic patient",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Headach",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Migraine",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Normal",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Tension",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "sugar",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I would like to suggest you to have this in your diet plan"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "Fatty Fish. Fatty fish is one of the healthiest foods on the planet. \nLeafy Greens. Leafy green vegetables are extremely nutritious and low in calories. \nCinnamon. Cinnamon is a delicious spice with potent antioxidant activity. \nEggs. Eggs provide amazing health benefits. \nChia Seeds. \nTurmeric. \nGreek Yogurt. \nNuts."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1590669376977",
+      "conditions": "@diet_plan:(diabetic patient)",
+      "dialog_node": "node_7_1590669534240",
+      "previous_sibling": "node_3_1590669431046"
+    },
+    {
+      "type": "standard",
+      "title": "kids",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Include these things in your child's diet."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "Fruits,Vegetables,Grains,Fats,oils,milk,dairy products,meat and beans"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1590669376977",
+      "conditions": "@diet_plan:kids",
+      "dialog_node": "node_3_1590669431046"
+    },
+    {
+      "type": "standard",
+      "title": "h",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I would like to suggest you to take Saridon tablet"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1590407634569",
+      "conditions": "@Headach:Migraine",
+      "dialog_node": "node_1_1590423149432",
+      "previous_sibling": "node_7_1590407796926"
+    },
+    {
+      "type": "standard",
+      "title": "type",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Take Rest, you will be fine."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1590407634569",
+      "conditions": "@Headach:Normal",
+      "dialog_node": "node_7_1590407796926"
+    },
+    {
+      "type": "standard",
+      "title": "name",
+      "output": {
+        "generic": [
+          {
+            "title": "Hello $name. How can I help you?",
+            "options": [
+              {
+                "label": "Medical suggestion",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              },
+              {
+                "label": "Diet plan",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "Welcome",
+      "context": {
+        "name": "<?input.text.substring(0,1).toUpperCase()+input.text.substring(1)?>"
+      },
+      "conditions": "true",
+      "dialog_node": "node_2_1590668686011"
+    },
+    {
+      "type": "standard",
+      "title": "cough",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I suggest you to take Benadryl Syrup "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Cough",
+      "dialog_node": "node_10_1590425440916",
+      "previous_sibling": "node_6_1590425648967"
+    },
+    {
+      "type": "standard",
+      "title": "headache",
+      "output": {
+        "generic": [
+          {
+            "title": "what",
+            "options": [
+              {
+                "label": "normal",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              },
+              {
+                "label": "migraine",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "conditions": "#headache",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_4_1590407634569",
+      "previous_sibling": "node_5_1590407276104"
+    },
+    {
+      "type": "standard",
+      "title": "bye",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Bye"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#bye",
+      "dialog_node": "node_5_1590425223101",
+      "previous_sibling": "node_1_1590669376977"
+    },
+    {
+      "type": "standard",
+      "title": "thankyou",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Thankyou! Stay safe"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#thank_you",
+      "dialog_node": "node_2_1590425246866",
+      "previous_sibling": "node_5_1590425223101"
+    },
+    {
+      "type": "standard",
+      "title": "fever",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Please take Paracetamol for normal fever, else i suggest you to take Dolo-650"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#fever",
+      "dialog_node": "node_6_1590425648967",
+      "previous_sibling": "node_4_1590407634569"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_2_1590425246866"
+    },
+    {
+      "type": "standard",
+      "title": "Medical",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Can you tell us your problem"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Medical",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_5_1590407276104",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "diet plan",
+      "output": {
+        "generic": [
+          {
+            "title": "Diet plan for?",
+            "options": [
+              {
+                "label": "Kids",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              },
+              {
+                "label": "Diabetic patient",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "conditions": "#diet_plan",
+      "dialog_node": "node_1_1590669376977",
+      "previous_sibling": "node_10_1590425440916"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hi, I'm here to help you in medication"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "I can call you by?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "My first skill",
+  "language": "en",
+  "description": ""
+}
